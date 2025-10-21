@@ -1,1 +1,4 @@
-npx lint-staged --allow-empty
+#!/bin/sh
+# 跨平台兼容：Windows 用 npx.cmd，macOS/Linux 用 npx
+command -v npx.cmd >/dev/null 2>&1 && NPX=npx.cmd || NPX=npx
+$NPX lint-staged --allow-empty
